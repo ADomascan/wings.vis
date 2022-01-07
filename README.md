@@ -1,2 +1,0 @@
-# wings.vis
-Verteilte Informationssysteme
