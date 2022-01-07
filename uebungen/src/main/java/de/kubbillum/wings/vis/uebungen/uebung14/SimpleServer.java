@@ -10,6 +10,8 @@ import java.net.Socket;
 public class SimpleServer {
 	public static void main(String[] args) {
 		try {
+			SecurityManager sm = new SecurityManager();
+			sm.checkListen(0);
 			System.out.println("start SimpleServer!");
 			// Erzeugt einen Server-Socket, der an den angegebenen Port gebunden ist.
 			try (ServerSocket ss = new ServerSocket(8442)) {
