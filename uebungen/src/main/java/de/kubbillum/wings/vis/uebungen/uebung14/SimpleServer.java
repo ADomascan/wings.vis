@@ -2,17 +2,26 @@ package de.kubbillum.wings.vis.uebungen.uebung14;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.URL;
 
 public class SimpleServer {
 	public static void main(String[] args) {
 		try {
 
+			
+	        
+				URL url = SimpleServer.class.getResource("SimpleServer.policy");
+				System.out.println("url: " + url.toString());
+				System.setProperty("java.security.policy", url.toString());
+				//System.out.println("url: " + url.toString());
+
 			// set the policy file as the system securuty policy
-			System.setProperty("java.security.policy", "SimpleServer.policy");
+			//System.setProperty("java.security.policy", "src/main/java/de/kubbillum/wings/vis/uebungen/uebung15/SimpleServer.policy");
 
 			// create a security manager
 			SecurityManager sm = new SecurityManager();
