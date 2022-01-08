@@ -10,8 +10,17 @@ import java.net.Socket;
 public class SimpleServer {
 	public static void main(String[] args) {
 		try {
+
+			// set the policy file as the system securuty policy
+			System.setProperty("java.security.policy", "SimpleServer.policy");
+
+			// create a security manager
 			SecurityManager sm = new SecurityManager();
-			sm.checkListen(0);
+
+			// set the system security manager
+			System.setSecurityManager(sm);
+
+
 			System.out.println("start SimpleServer!");
 			// Erzeugt einen Server-Socket, der an den angegebenen Port gebunden ist.
 			try (ServerSocket ss = new ServerSocket(8442)) {
@@ -39,7 +48,7 @@ public class SimpleServer {
 						System.out.println("Server receives: " + t);
 						if (!"stop".equals(t)) {
 							out.println("Hi client!");
-						} else { 
+						} else {
 							stop = true;
 							out.println("The server will be stopped!");
 						}
