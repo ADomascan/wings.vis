@@ -9,26 +9,17 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
 
+import de.kubbillum.wings.vis.uebungen.uebung15.PortSecurityManager;
+
 public class SimpleServer {
 	public static void main(String[] args) {
 		try {
-
-			
-	        
-				URL url = SimpleServer.class.getResource("SimpleServer.policy");
-				System.out.println("url: " + url.toString());
-				System.setProperty("java.security.policy", url.toString());
-				//System.out.println("url: " + url.toString());
-
-			// set the policy file as the system securuty policy
-			//System.setProperty("java.security.policy", "src/main/java/de/kubbillum/wings/vis/uebungen/uebung15/SimpleServer.policy");
-
 			// create a security manager
-			SecurityManager sm = new SecurityManager();
-
+			SecurityManager sm = new PortSecurityManager(8000,65535);
+			
 			// set the system security manager
 			System.setSecurityManager(sm);
-
+			//sm.checkListen(0);
 
 			System.out.println("start SimpleServer!");
 			// Erzeugt einen Server-Socket, der an den angegebenen Port gebunden ist.
