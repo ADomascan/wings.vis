@@ -1,9 +1,6 @@
 # wings.vis 
-Repository für die Abgabe von Verteilte Informationssysteme
 
-## Lösungen zu den Übungen aus dem Studienskript
+Repository fÃ¼r die Einarbeitung und die Bearbeitung der Projektarbeit im Modul Verteilte Informationssysteme.
 
-Die Lösungen sind im Package: package de.kubbillum.wings.vis.uebungen*
-
-####zu Aufgabe 1.5)
-Es wurde eine Sicherheitsrichtline in der Datei SimpleServer.policy definiert.
+Die Dokumentation der Einarbeitung und der Projektarbeit erfolgt in Form eines dediziertes Dokuments.
+Der aktuelle Stand kann unter folgendem Link abgerufen werden: [Kubbillum_Martin_Einarbeitung_und_Projektarbeit] (https://studhswismarde.sharepoint.com/:w:/s/VerteilteInformationssysteme755/EehfJpN4yZZKisdVfvI8UsEBz7VNO68YVLkYPThX-lSnqQ?e=i8ftNq)
