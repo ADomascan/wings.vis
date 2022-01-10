@@ -12,4 +12,4 @@ Der aktuelle Stand der Dokumente kann unter folgenden Links abgerufen werden:
 
 
 ### Abgabe-Artefakte
-Für die Abgabe werden die geforderten Dokumente als PDF und das Repository inkl. Quelltexten und Demo-Videos als ZIP-Archiv in der Campus-Cloud hochgeladen.
+Für die Abgabe werden die geforderten Dokumente als PDF und das Git-Repository mit Quelltexten und Demo-Videos als ZIP-Archiv in der Campus-Cloud hochgeladen.
