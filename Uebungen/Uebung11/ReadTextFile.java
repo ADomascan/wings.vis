@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,8 +10,7 @@ public class ReadTextFile {
 	public static void main(String[] args) {
 		BufferedReader in = null;
 		try {
-			URL url = ReadTextFile.class.getResource("textdatei.txt");
-			in = new BufferedReader(new FileReader(url.getPath()));
+			in = new BufferedReader(new FileReader("textdatei.txt"));
 			String s = "";
 			String res;
 			while ((res = in.readLine()) != null) {
