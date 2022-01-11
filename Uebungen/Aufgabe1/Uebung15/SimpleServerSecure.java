@@ -9,12 +9,13 @@ import java.net.Socket;
 public class SimpleServerSecure {
 	public static void main(String[] args) {
 		try {			
+			// Es Wird die eigene Implementiert des SecurityManagers "PortSecurityManager" gesetzt. 
+			
 			// create a security manager
 			SecurityManager sm = new PortSecurityManager();
 			
 			// set the system security manager
 			System.setSecurityManager(sm);
-			//sm.checkListen(0);
 
 			// Das try-with-resources Statement ermoeglicht die Deklaration von Ressourcen,
 			// die am Ende des try Blocks automatisch geschlossen werden.
