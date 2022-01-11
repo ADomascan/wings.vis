@@ -9,7 +9,7 @@ import java.net.Socket;
 public class SimpleServerSecure {
 	public static void main(String[] args) {
 		try {			
-			// Es Wird die eigene Implementiert des SecurityManagers "PortSecurityManager" gesetzt. 
+			// Es wird die eigene Implementiert des SecurityManagers "PortSecurityManager" gesetzt. 
 			
 			// create a security manager
 			SecurityManager sm = new PortSecurityManager();
