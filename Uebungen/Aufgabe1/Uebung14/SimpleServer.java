@@ -6,21 +6,12 @@ import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import de.kubbillum.wings.vis.uebungen.uebung15.PortSecurityManager;
-
 public class SimpleServer {
 	public static void main(String[] args) {
 		try {
-			// create a security manager
-			SecurityManager sm = new PortSecurityManager(8000,65535);
-			
-			// set the system security manager
-			System.setSecurityManager(sm);
-			//sm.checkListen(0);
-
 			System.out.println("start SimpleServer!");
 			// Erzeugt einen Server-Socket, der an den angegebenen Port gebunden ist.
-			try (ServerSocket ss = new ServerSocket(8442)) {
+			try (ServerSocket ss = new ServerSocket(8442)) { // Hochschulkennung st191442 => Port: 8442
 				// ServerSocket repräsentiert einen Server, dessen Konstruktor die Nummer des
 				// Ports übergeben bekommt, an dem der Server horchen soll.
 				// Das try-with-resources Statement ermöglicht die Deklaration von Ressourcen,

@@ -27,7 +27,7 @@ public class SimpleClient {
 			while (!"stop".equals(message)) {
 				// Einrichtung der Socketverbindung über Port 8441 zu localhost
 				// !!! localhost anstelle von rivera.wi.hs-wismar.de
-				s = new Socket("localhost", 8442); // Kennung st191442 => Port: 8442
+				s = new Socket("localhost", 8442); // Hochschulkennung st191442 => Port: 8442
 				// BufferedReader: Filter zur Pufferung von Eingaben, kann verwendet werden, um
 				// die Performance beim Lesen von externen Dateien zu erhöhen. Da nicht jedes
 				// Byte einzeln gelesen wird, verringert sich die Anzahl der Zugriffe auf den
