@@ -9,14 +9,13 @@ import java.net.Socket;
 public class SimpleServer {
 	public static void main(String[] args) {
 		try {
-			System.out.println("START SimpleServer!");
-
 			// Das try-with-resources Statement ermoeglicht die Deklaration von Ressourcen,
 			// die am Ende des try Blocks automatisch geschlossen werden.
 
 			// ServerSocket repraesentiert einen Server, dessen Konstruktor die Nummer des
 			// Ports uebergeben bekommt, an dem der Server horchen soll.
 			try (ServerSocket ss = new ServerSocket(8442)) { // Hochschulkennung st191442 => Port: 8442
+				System.out.println("START SimpleServer!");
 
 				String t = null;
 
@@ -24,13 +23,13 @@ public class SimpleServer {
 				// die while-Schleife nicht fortgesetzt wird. Sie wird innerhalb des Servers auf
 				// true gesetzt, wenn dieser die Nachricht "stop" vom Client empfaengt.
 				boolean stop = false;
-				
+
 				while (!stop) {
-					
+
 					// Nach Einrichten des Sockets wird durch die Methode accept() eine Verbindung
 					// innerhalb einer Endlosschleife hergestellt.
 					Socket s = ss.accept();
-					
+
 					// Innerhalb der while-Schleife werden auf gleiche Weise, wie in
 					// SimpleClient.java beschrieben, Input- und OutputStreams gelesen und
 					// geschrieben. Diese werden wieder vom Socket geliefert.
