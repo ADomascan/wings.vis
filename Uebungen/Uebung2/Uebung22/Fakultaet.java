@@ -10,7 +10,6 @@ public class Fakultaet {
 			BigInteger result = getFactorial(BigInteger.valueOf(value));
 			System.out.print("!" + value + " = " + result);
 		}
-
 	}
 
 	public static BigInteger getFactorial(BigInteger f) { // Rekursive Berechnung der Fakultaet
