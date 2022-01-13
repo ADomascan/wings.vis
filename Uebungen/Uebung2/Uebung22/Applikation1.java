@@ -6,5 +6,4 @@ public class Applikation1 {
 		SleepingThread st2 = new SleepingThread();
 		st2.start();
 	}
-
 }
