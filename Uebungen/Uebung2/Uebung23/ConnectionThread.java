@@ -6,6 +6,7 @@ import java.net.Socket;
 
 public class ConnectionThread extends Thread {
 	private Socket socket;
+<<<<<<< HEAD
 	private String userName;
 
 	public ConnectionThread(Socket socket) {
@@ -24,6 +25,25 @@ public class ConnectionThread extends Thread {
 				message = in.readLine();
 				if (message != null) {
 					System.out.println("[" + this.getName() + "] receives: " + message);
+=======
+
+	public ConnectionThread(Socket socket) {
+		this.socket = socket;
+	}
+
+	public void run() {
+		System.out.println("START ConnectionThread!");
+
+		String message = null;
+		boolean stop = false;
+		try {
+			while (!stop) {
+				BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+				PrintStream out = new PrintStream(socket.getOutputStream());
+				message = in.readLine();
+				if (message != null) {
+					System.out.println("Server receives: " + message);
+>>>>>>> branch 'master' of git@github.com:kumatec84/wings.vis.git
 					if (!"stop".equals(message)) {
 						out.println("Hi client!");
 					} else {

@@ -22,6 +22,4 @@ public class KontoThread extends Thread {
 	public void setKonto(Konto konto) {
 		this.konto = konto;
 	}
-
-
 }
