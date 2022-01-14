@@ -7,6 +7,5 @@ public class Anwendung {
 		t1.start();
 		t2.start();
 		t3.start();
-		//System.out.println("Finaler Kontostand: " + konto1.getKontostand());
 	}
 }
