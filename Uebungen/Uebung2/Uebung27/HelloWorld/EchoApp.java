@@ -4,11 +4,12 @@ import java.util.concurrent.TimeUnit;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
-import akka.actor.Props;
+import akka.actor.Props; 
 import akka.actor.UntypedActor;
 import scala.concurrent.duration.Duration;
 
 public class EchoApp extends UntypedActor {
+	//javac -classpath '*' ./*.java -d classes && jar -cvf HelloWorld.jar -C classes/ . && clear &&  java -classpath "*" akka.Main EchoApp 
 	
 	@Override
 	public void preStart() {

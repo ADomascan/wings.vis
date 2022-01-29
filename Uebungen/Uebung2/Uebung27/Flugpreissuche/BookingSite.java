@@ -7,7 +7,7 @@ import akka.actor.UntypedActor;
 
 public class BookingSite extends UntypedActor {
 
-	// javac -classpath '*' ./*.java -d classes && jar -cvf HelloWorld.jar -C classes/ . && clear &&  java -classpath "*" akka.Main BookingSite 
+	// javac -classpath '*' ./*.java -d classes && jar -cvf Flugpreissuche.jar -C classes/ . && clear &&  java -classpath "*" akka.Main BookingSite 
 	
 	@Override
 	public void preStart() {
