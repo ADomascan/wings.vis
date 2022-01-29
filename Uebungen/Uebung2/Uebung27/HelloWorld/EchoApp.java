@@ -10,7 +10,7 @@ import scala.concurrent.duration.Duration;
 
 public class EchoApp extends UntypedActor {
 	//javac -classpath '*' ./*.java -d classes && jar -cvf HelloWorld.jar -C classes/ . && clear &&  java -classpath "*" akka.Main EchoApp 
-	
+	 
 	@Override
 	public void preStart() {
 		ActorSystem system = ActorSystem.create("test-system");
