@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import akka.actor.ActorRef;
@@ -7,26 +9,38 @@ import akka.actor.UntypedActor;
 import scala.concurrent.duration.Duration;
 
 public class EchoApp extends UntypedActor {
-
+	
 	@Override
 	public void preStart() {
 		ActorSystem system = ActorSystem.create("test-system");
 		final ActorRef echo = system.actorOf(Props.create(Echo.class), "echo");
-		//echo.tell("Hello, world...!", getSelf());
-		
-		system.scheduler().schedule(Duration.Zero(), Duration.create(5000, TimeUnit.MILLISECONDS), echo, "Hello, world", system.dispatcher(), null);
-		
-		//system.stop(echo);
-		//system.stop(getSelf());
-		//system.terminate();
-	}
+		// echo.tell("Hello, world...!", getSelf());
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+		System.out.println(formatter.format(date));
+
+		new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date());
+
+		// This object contains the current date value
+		// System.out.println(formatter.format(date));
 	
+		final ActorRef receiver = system.actorOf(Props.create(Receiver.class), "receiver");
+
+		system.scheduler().schedule(Duration.Zero(), Duration.create(3000, TimeUnit.MILLISECONDS), echo,
+				"Hello, world! (ursprünglich gesendet von EchoApp-Scheduler) | ",
+				system.dispatcher(), receiver);
+
+		// system.stop(echo);
+		// system.stop(getSelf());
+		// system.terminate();
+	}
+
 	@Override
 	public void onReceive(Object msg) {
 		if (msg != null) {
-			System.out.println("Nachricht an EchoApp: " + msg);
-			getSender().tell(msg, getSelf());
+			// TODO
 		} else
 			unhandled(msg);
 	}
+
 }

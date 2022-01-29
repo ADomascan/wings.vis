@@ -7,9 +7,10 @@ import akka.actor.UntypedActor;
 
 public class BookingSite extends UntypedActor {
 
+	// javac -classpath '*' ./*.java -d classes && jar -cvf HelloWorld.jar -C classes/ . && clear &&  java -classpath "*" akka.Main BookingSite 
+	
 	@Override
 	public void preStart() {
-
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Ihre Flugpreissuche");
 		System.out.println("===================");
@@ -47,7 +48,7 @@ public class BookingSite extends UntypedActor {
 							+ flight.getTo() + " wird nicht angeboten.");
 				}
 			} catch (ClassCastException e) {
-				System.out.println("Fehler: " + e.getMessage());
+				System.err.println("Fehler: " + e.getMessage());
 			}
 		} else {
 			unhandled(msg);
