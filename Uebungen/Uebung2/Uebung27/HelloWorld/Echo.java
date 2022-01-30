@@ -8,5 +8,4 @@ public class Echo extends UntypedActor {
 		} else
 			unhandled(msg);
 	}
-
 }

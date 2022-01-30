@@ -9,5 +9,4 @@ public class Printer extends UntypedActor {
 		} else
 			unhandled(msg);
 	}
-
 }
