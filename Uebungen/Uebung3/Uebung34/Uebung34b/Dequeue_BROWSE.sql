@@ -8,7 +8,7 @@ DECLARE
     message_id          RAW(2000);
     my_message          aqadm.queue_message_type;
 BEGIN	
-	queue_options.dequeue_mode := DBMS_AQ.BROWSE;
+    queue_options.dequeue_mode := DBMS_AQ.BROWSE;
     DBMS_AQ.DEQUEUE(
         queue_name => 'aqadm.message_queue',
         dequeue_options => queue_options,
