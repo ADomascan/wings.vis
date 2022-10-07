@@ -9,7 +9,7 @@ class HelloServer {
 		try {
 //			Option 1
 		    LocateRegistry.createRegistry(1099);
-			Naming.rebind("rmi://localhost:1099/HelloServer", new Hello("Hello, RMI world!"));
+			Naming.rebind("rmi://localhost:8442/HelloServer", new Hello("Hello, RMI world!"));
 			
 //			Option 2
 //			//Kontext setzen
